@@ -2,21 +2,11 @@
 
 int main()
 {
-    std::cout << "Enter two numbers: " << std::endl;
-    int v1, v2;
-    std::cin >> v1 >> v2;
-    
-    int upper;
-    if (v1 >= v2)
+    int num, total;
+    while (std::cin >> num)
     {
-        upper = v1;
+        total += num;
     }
-    else
-    {
-        upper = v2;
-    }
+    std::cout << "The sum of the number entered is " << total << std::endl;
 
-    std::cout << "The upper number you entered is " << upper << std::endl;
-
-    return 0;
 }

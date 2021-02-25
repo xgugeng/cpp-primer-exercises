@@ -2,21 +2,18 @@
 
 int main()
 {
-    int sum = 0;
-    for (int i = 50; i <= 100; ++i)
+    int i = 10;
+    while (i >= 0)
     {
-        sum += i;
+        std::cout << i << " ";
+        --i;
     }
-    std::cout << "Sum using for-loop is " << sum << std::endl;
+    std::cout << std::endl;
 
-    sum = 0;
-    int j = 50;
-    while (j <= 100)
+    for (int j = 10; j >= 0; --j)
     {
-        sum += j;
-        ++j;
+        std::cout << j << " ";
     }
-    std::cout << "Sum using while-loop is " << sum << std::endl;
 
     return 0;
 }

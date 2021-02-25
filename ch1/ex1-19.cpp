@@ -18,16 +18,9 @@ int main()
         lower = v2;
     }
 
-    int p = 0;
     for (int i = lower; i <= upper; ++i)
     {
         cout << i << " ";
-        ++p;
-        if (p >= 10)
-        {
-            cout << endl;
-            p = 0;
-        }
     }
     cout << endl;
 

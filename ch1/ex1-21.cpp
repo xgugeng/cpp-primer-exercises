@@ -3,18 +3,17 @@
 
 int main()
 {
-    Sales_item item;
-    while (std::cin >> item)
+    Sales_item book1, book2;
+    std::cout << "Enter two books: " << std::endl;
+    std::cin >> book1 >> book2;
+    if (book1.isbn() == book2.isbn())
     {
-        std::cout << item << std::endl;
+        std::cout << book1 + book2 << std::endl;
     }
-
-    /*
-    Alternative way ->
-    for (Sales_item item; cin >> item; std::cout << item << std::endl)
+    else
     {
+        std::cerr << "Different ISBN" << std::endl;
     }
-    */
 
     return 0;
 }

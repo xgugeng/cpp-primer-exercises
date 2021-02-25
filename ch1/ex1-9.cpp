@@ -3,11 +3,13 @@
 int main()
 {
     int sum = 0;
-    for (int i = -100; i <= 100; ++i)
+    int j = 50;
+    while (j <= 100)
     {
-        sum += i;
+        sum += j;
+        ++j;
     }
-    std::cout << "sum is " << sum << std::endl;
+    std::cout << "Sum using while-loop is " << sum << std::endl;
 
     return 0;
 }

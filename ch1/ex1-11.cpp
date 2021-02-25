@@ -2,18 +2,29 @@
 
 int main()
 {
-    int i = 10;
-    while (i >= 0)
+    std::cout << "Enter two numbers: " << std::endl;
+    int v1, v2;
+    std::cin >> v1 >> v2;
+    int lower, upper;
+    if (v1 <= v2)
     {
-        std::cout << i << " ";
-        --i;
+        lower = v1;
+        upper = v2;
     }
-    std::cout << std::endl;
+    else 
+    {
+        lower = v2;
+        upper = v1;
+    }
 
-    for (int j = 10; j >= 0; --j)
+    int sum = 0;
+    for (int val = lower; val <= upper; ++val)
     {
-        std::cout << j << " ";
+        sum += val;
     }
+    std::cout << "Sum of " << lower << " to " << upper
+              << " inclusive is " << sum << std::endl;
 
     return 0;
 }
+

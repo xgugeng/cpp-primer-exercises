@@ -1,25 +1,26 @@
 #include <iostream>
 #include "Sales_item.h"
 
-using namespace std;
-
 int main()
 {
-    Sales_item first;
-    if (cin >> first)
+    Sales_item lastItem, curItem;
+    if (std::cin >> lastItem)
     {
-        Sales_item item;
-        while (cin >> item)
+        int cnt = 1;
+        while (std::cin >> curItem)
         {
-            if (first.isbn() == item.isbn())
+            if (curItem.isbn() == lastItem.isbn())
             {
-                first += item;
+                ++cnt;
+            }
+            else
+            {
+                std::cout << lastItem << " occurs " << cnt << " times " << std::endl;
+                lastItem = curItem;
+                cnt = 1;
             }
         }
-        cout << first << endl;
+        std::cout << lastItem << " occurs "<< cnt << " times " << std::endl;
     }
-    else
-    {
-        cerr << "No item input" << endl;
-    }
+    return 0;
 }

@@ -1,6 +1,12 @@
-# 快速入门
+# Getting Started
 
-## 习题 1.2
+## Exercise 1.1
+
+Review the documentation for your compiler and determine what file naming convention it uses.
+
+## Exercise 1.2
+
+Change the program to return -1. A return value of -1 is often treated as an indicator that the program failed. Recompile and rerun your program to see how your system treats a failure indicator from `main`.
 
 修改程序使其返回 -1。
 
@@ -10,29 +16,29 @@ g++ ex1-2.cpp -o ex1-2
 echo $? # 255
 ```
 
-## 习题 1.3
+## Exercise 1.3
 
-编写一个程序，在标准输出上打印 "Hello, World"。
+Write a program to print `Hello, World` on the standard output.
 
-## 习题 1.4
+## Exercise 1.4
 
-编写程序，使用乘法操作符 `*` 来产生两个数的积。
+Our program used the addition operator, +, to add two numbers. Write a program that uses the multiplication operator, *, to print the product instead.
 
-## 习题 1.5
+## Exercise 1.5
 
-重写程序，将每个运算对象的打印操作放在一条独立的语句中。
+We wrote the output in one large statement. Rewrite the program to use a separate statement to print each operand.
 
-## 习题 1.6
+## Exercise 1.6
 
-解释下面程序片段是否合法。
+Explain whether the following program fragment is legal.
 
-```
+```cpp
 std::cout << "The sum of " << v1;
 		  << " and " << v2;
 		  << " is " << v1 + v2 << std::endl;
 ```
 
-如果程序是合法的，它的输出是什么？如果程序不合法，原因何在？应该如何修正？
+If the program is legal, what does it do? If the program is not legal, why not? How would you fix it?
 
 ```
 ex1-6.cpp: In function ‘int main()’:
@@ -44,9 +50,9 @@ ex1-6.cpp:10:5: error: expected primary-expression before ‘<<’ token
       |     ^~
 ```
 
-## 习题 1.7
+## Exercise 1.7
 
-编译一个包含不正确的嵌套注释的程序。
+Compile a program that has incorrectly nested comments.
 
 ```
 g++ ex1-7.cpp
@@ -55,113 +61,105 @@ ex1-7.cpp:4:3: error: expected unqualified-id before ‘/’ token
       |  
 ```
 
-## 习题 1.8
+## Exercise 1.8
 
-指出下列哪些输出语句是合法的(如果有的话)：
+Indicate which, if any, of the following output statements are legal:
 
-```
+```cpp
 std::cout << "/*"; ✅
 std::cout << "*/"; ✅
 std::cout << /* "*/" */; ❌
+std::cout << /*  "*/" /* "/*"  */; ❌
 ```
+
+After you’ve predicted what will happen, test your answers by compiling a program with each of these statements. Correct any errors you encounter.
+
 
 The output of `g++ ex1-8.cpp`:
 
 ```
-ex1-8.cpp:9:5: error: expected primary-expression before ‘return’
-    9 |     return 0;
-      |     ^~~~~~
+ex1-8.cpp:7:24: warning: missing terminating " character
+    7 |     std::cout << /* "*/" */;
+      |                        ^
 ```
 
-## 习题 1.9
+## Exercise 1.9
 
-下列循环做什么？sum 的最终值是多少？
+Write a program that uses a while to sum the numbers from 50 to 100.
+
+## Exercise 1.10
+
+In addition to the ++ operator that adds 1 to its operand, there is a decrement operator (--) that subtracts 1. Use the decrement operator to write a while that prints the numbers from ten down to zero.
+
+## Exercise 1.11
+
+Write a program that prompts the user for two integers. Print each number in the range specified by those two integers.
+
+## Exercise 1.12
+
+What does the following for loop do? What is the final value of sum?
 
 ```cpp
-    int sum = 0;
-    for (int i = -100; i <= 100; ++i)
-    {
-        sum += i;
-    }
-    // sum is 0
+int sum = 0;
+for (int i = -100; i <= 100; ++i)
+    sum += i;
 ```
 
-## 习题 1.10
+## Exercise 1.13
 
-用 for 循环编程，求从 50 到 100 的所有自然数的和。然后在用 while 循环重写该程序。
+Rewrite the first two exercises using for loops.
 
-## 习题 1.11
+## Exercise 1.14
 
-用 while 循环编程，输出 10 到 0 递减的自然数。然后用 for 重写该程序。
+Compare and contrast the loops that used a for with those using a while. Are there advantages or disadvantages to using either form?
 
-## 习题 1.12
+> gugeng: It's easy to write a for loop if the incrementor is clear and simple
 
-对比前面两个习题种所写的循环，两种形式各有什么优缺点？
+## Exercise 1.15
 
-> gugeng: 对于条件修改表达式明确的循环，使用 for 比较方便。用 while 总是担心漏掉。
+Write programs that contain the common errors discussed in the box on page 16. Familiarize yourself with the messages the compiler generates.
 
-## 习题 1.13
+> gugeng: Syntax errors, type errors, declaration errors, which all can be detected by complier
 
-编写程序，包含本节“再谈编译”中讨论的常见错误。熟悉编译器生成的错误信息。
+## Exercise 1.16
 
-> gugeng: 常见的错误有语法错误、类型错误、声明错误，这些都是编译器可以检查出的错误。
+Write your own version of a program that prints the sum of a set of integers read from cin.
 
-## 习题 1.14
+## Exercise 1.17
 
-如果输入值相等，本节展示的程序会产生什么问题？
+What happens in the program presented in this section if the input values are all equal? What if there are no duplicated values?
 
-> gugeng: sum 等于该输入值。
+> gugeng: If all input values are equal, only one log will be output. If no duplicated values, each line will be output after the second input.
 
-## 习题 1.15
+## Exercise 1.18
 
-用两个相等的值作为输入编译并运行本节中的程序。将是实际输出与习题 1.14 中的预测比较。
+Compile and run the program from this section giving it only equal values as input. Run it again giving it values in which no number is repeated.
 
-## 习题 1.16
+## Exercise 1.19
 
-编写程序，输出用户输入的两个数的较大者。
-
-## 习题 1.17
-
-编写程序，要求用户输入一组数。输出信息说明其中有多少个负数。
+Revise the program you wrote for the exercises in that printed a range of numbers so that it handles input in which the first number is smaller than the second.
 
 
-## 习题 1.18
+## Exercise 1.20
 
-编写程序，提示用户输入两个数并把这两个数范围内的每个数写到标准输出。
+http://www.informit.com/title/0321714113 contains a copy of Sales_item.h in the Chapter 1 code directory. Copy that file to your working directory. Use it to write a program that reads a set of book sales transactions, writing each transaction to the standard output.
 
-## 习题 1.19
+## Exercise 1.21
 
-如果上题中给定数 1000 和 2000，会有什么结果？修改程序，使得每一行的输出不超过 10 个数字。
+Write a program that reads two Sales_item objects that have the same ISBN and produces their sum.
 
-## 习题 1.20
+## Exercise 1.22
 
-编写程序，求用户指定范围内的数的和，省略设置上下界的 if 测试。如果输入为 7 和 3，按照这个顺序，预测程序运行结果。
+Write a program that reads several transactions for the same ISBN. Write the sum of all the transactions that were read.
 
-> gugeng: sum 为 0，没有进入循环的机会。
+## Exercise 1.23
 
-## 习题 1.21
+Write a program that reads several transactions and counts how many transactions occur for each ISBN.
 
-将 Sales_item.h 拷贝到你自己的工作目录中。用它编写一个程序，读取一组书籍销售记录，将每条记录打印到标准输出上。
+## Exercise 1.24
 
-## 习题 1.22
+Test the previous program by giving multiple transactions representing multiple ISBNs. The records for each ISBN should be grouped together.
 
-编写程序，读取两个 ISBN 相同的 Sales_item 对象，输出他们的和。
+## Exercise 1.25
 
-## 习题 1.23
-
-编写程序，读取多个具有相同 ISBN 的销售记录，输出所有记录的和。
-
-## 习题 1.24
-
-编写程序，读取多条销售记录，并统计每个 ISBN（每本书）有几条销售记录。
-
-## 习题 1.25
-
-使用书中的 Sales_item.h 头文件，编译并执行本节给出的书店程序。
-
-## 习题 1.26
-
-书店程序中，我们使用加法操作符，而不是复合赋值操作符将 trans 加到 total 中，为什么？
-
-> gugeng: 此 repo 中引入的 Sales_item.h 都重载了 `operator+=1` 和 `operator+`。这个问题就不存在了。
-
+Using the Sales_item.h header from the Web site, compile and execute the bookstore program presented in this section.

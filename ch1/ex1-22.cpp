@@ -1,19 +1,25 @@
 #include <iostream>
 #include "Sales_item.h"
 
+using namespace std;
+
 int main()
 {
-    Sales_item book1, book2;
-    std::cout << "Enter two books: " << std::endl;
-    std::cin >> book1 >> book2;
-    if (book1.isbn() == book2.isbn())
+    Sales_item first;
+    if (cin >> first)
     {
-        std::cout << book1 + book2 << std::endl;
+        Sales_item item;
+        while (cin >> item)
+        {
+            if (first.isbn() == item.isbn())
+            {
+                first += item;
+            }
+        }
+        cout << first << endl;
     }
     else
     {
-        std::cerr << "Different ISBN" << std::endl;
+        cerr << "No item input" << endl;
     }
-
-    return 0;
 }

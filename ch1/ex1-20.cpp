@@ -1,19 +1,20 @@
 #include <iostream>
+#include "Sales_item.h"
 
 int main()
 {
-    std::cout << "Enter two numbers: " << std::endl;
-    int v1, v2;
-    std::cin >> v1 >> v2;
-
-    int sum = 0;
-    for (int val = v1; val <= v2; ++val)
+    Sales_item item;
+    while (std::cin >> item)
     {
-        sum += val;
+        std::cout << item << std::endl;
     }
-    std::cout << "Sum of " << v1 << " to " << v2
-              << " inclusive is " << sum << std::endl;
+
+    /*
+    Alternative way ->
+    for (Sales_item item; cin >> item; std::cout << item << std::endl)
+    {
+    }
+    */
 
     return 0;
 }
-
