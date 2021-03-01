@@ -15,7 +15,7 @@ Between a float and a double?
 
 To calculate a mortgage payment, what types would you use for the rate, principal, and payment? Explain why you selected each type.
 
-> gugeng: double for all, fore precision
+> gugeng: Double for all, fore precision
 
 ## Exercise 2.3
 
@@ -72,6 +72,109 @@ What values do these literals represent? What type does each have?
 ## Exercise 2.8
 
 Using escape sequences, write a program to print 2M followed by a newline. Modify the program to print 2, then a tab, then an M, followed by a newline.
+
+## Exercise 2.9
+
+Explain the following definitions. For those that are illegal, explain what’s wrong and how to correct it.
+
+(a) std::cin >> int input_value; // error: expected primary-expression before ‘int’
+(b) int i = { 3.14 }; // error: narrowing conversion of ‘3.1400000000000001e+0’ from ‘double’ to ‘int’
+(c) double salary = wage = 9999.99; // error: ‘wage’ was not declared in this scope
+(d) int i = 3.14; // ok, but 3.14 is truncated to 3
+
+## Exercise 2.10
+
+What are the initial values, if any, of each of the following variables?
+
+```cpp
+std::string global_str; // empty string
+int global_int; // 0
+int main()
+{
+    int local_int; // undefined value
+    std::string local_str; // empty string
+}
+```
+
+## Exercise 2.11
+
+Explain whether each of the following is a declaration or a definition:
+
+(a) extern int ix = 1024; // definition
+(b) int iy; // declaration
+(c) extern int iz; // declaration
+
+## Exercise 2.12
+
+Which, if any, of the following names are invalid?
+
+(a) int double = 3.14; // invalid
+(b) int _; // valid
+(c) int catch-22; // invalid
+(d) int 1_or_2 = 1; // valid
+(e) double Double = 3.14; // valid
+
+## Exercise 2.13
+
+What is the value of j in the following program?
+
+```cpp
+int i = 42;
+int main()
+{
+    int i = 100;
+    int j = i; // j=100
+}
+```
+
+## Exercise 2.14
+
+Is the following program legal? If so, what values are printed?
+
+```cpp
+int i = 100, sum = 0;
+for (int i = 0; i != 10; ++i)
+     sum += i;
+std::cout << i << " " << sum << std::endl;
+```
+
+> gugeng: It's legal, but the i in the for-loop is a local one covering the global i. i is 100 and sum is 45.
+
+## Exercise 2.15
+
+Which of the following definitions, if any, are invalid? Why?
+
+(a) int ival = 1.01; // valid
+(b) int &rval1 = 1.01; // invalid, initial value of reference to non-const must be a lvalue
+(c) int &rval2 = ival; // valid
+(d) int &rval3; // invalid, reference must be initialized
+
+## Exercise 2.16
+
+Which, if any, of the following assignments are invalid? If they are valid, explain what they do.
+
+```cpp
+int i = 0, &r1 = i; double d = 0, &r2 = d;
+```
+
+(a) r2 = 3.14159; // valid
+(b) r2 = r1; // valid, implicit type conversion
+(c) i = r2; // valid, implicit type conversion
+(d) r1 = d; // valid, implicit type conversion
+
+## Exercise 2.17
+
+What does the following code print?
+
+```cpp
+int i, &ri = i;
+i = 5; ri = 10;
+std::cout << i << " " << ri << std::endl; // print: 10 10
+```
+
+## Exercise 2.18
+
+Write code to change the value of a pointer. Write code to change the value to which the pointer points.
 
 ## Exercise 2.26
 
