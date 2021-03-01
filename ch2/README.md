@@ -176,6 +176,78 @@ std::cout << i << " " << ri << std::endl; // print: 10 10
 
 Write code to change the value of a pointer. Write code to change the value to which the pointer points.
 
+## Exercise 2.19
+
+Explain the key differences between pointers and references.
+
+> gugeng:
+>
+> 1. reference is an alias to variable (not an object, without address), it must be initialized and cannot be copied.
+> 2. pointer is an object, it can be assigned and copied, might not be initialized at the time it's defined
+
+## Exercise 2.20
+
+What does the following program do?
+
+```cpp
+int i = 42;
+int *p1 = &i;
+*p1 = *p1 * *p1; // i = 42*42
+```
+
+## Exercise 2.21
+
+Explain each of the following definitions. Indicate whether any are illegal and, if so, why.
+
+
+```cpp
+int i = 0;
+```
+
+(a) double* dp = &i; // illegal, type mismatch
+(b) int *ip = i; // illegal, initialize a pointer with int
+(c) int *p = &i; // legal
+
+## Exercise 2.22
+
+Assuming p is a pointer to int, explain the following code:
+
+```cpp
+if (p) // if p is a null pointer
+if (*p) // if the int p is pointing to is 0
+```
+
+## Exercise 2.23
+
+Given a pointer p, can you determine whether p points to a valid object? If so, how? If not, why not?
+
+> gugeng: NO, the pointer points to a address, we need more info to detect it
+
+## Exercise 2.24
+
+Why is the initialization of p legal but that of lp illegal?
+
+```cpp
+int i = 42;
+void *p = &i;
+long *lp = &i;
+```
+
+> gugeng: `void*` is a special pointer type that can hold the address of any object, but the type of the object is unknown. While the type of `lp` is `long*`, it can only point to a long variable
+
+## Exercise 2.25
+
+Determine the types and values of each of the following variables.
+
+(a) int* ip, i, &r = i;
+> gugeng: ip is a pointer, i is an int, r is a reference to i
+
+(b) int i, *ip = 0;
+> gugeng: ip is an invalid pointer, i is an int
+
+(c) int* ip, ip2;
+> gugeng: ip is a pointer, ip2 in an int
+
 ## Exercise 2.26
 
 Which of the following are legal? For those that are illegal, explain why.
@@ -184,3 +256,36 @@ Which of the following are legal? For those that are illegal, explain why.
 (b) int cnt = 0; // legal
 (c) const int sz = cnt; // legal, copy happens
 (d) ++cnt; ++sz; // illegal, cannot change a const variable
+
+## Exercise 2.27
+
+Which of the following initializations are legal? Explain why.
+
+(a) int i = -1, &r = 0; // illegal, r must be initialized to a lvalue
+(b) int *const p2 = &i2; // legal
+(c) const int i = -1, &r = 0; // legal
+(d) const int *const p3 = &i2; // legal
+(e) const int *p1 = &i2; // legal
+(f) const int &const r2; // illegal, r2 must be initialized
+(g) const int i2 = i, &r = i; // legal
+
+## Exercise 2.28
+
+Explain the following definitions. Identify any that are illegal.
+
+(a) int i, *const cp; // illegal, cp must be initialized
+(b) int *p1, *const p2; // illegal, p2 must be initialized
+(c) const int ic, &r = ic; // illegal, ic must be initialized
+(d) const int *const p3; // illegal, p3 must be initialized
+(e) const int *p; // legal
+
+## Exercise 2.29
+
+Uing the variables in the previous exercise, which of the following assignments are legal? Explain why.
+
+(a) i = ic; // legal
+(b) p1 = p3; // illegal, p3 is a const pointer to const int
+(c) p1 = &ic; // illegal, ic is a const int
+(d) p3 = &ic; // illegal, p3 is a const pointer
+(e) p2 = p1; // illegal, p2 is a const pointer
+(f) ic = *p3; // illegal, ic is a const int
