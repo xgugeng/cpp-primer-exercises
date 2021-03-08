@@ -63,3 +63,28 @@ for (auto &c : s) { /* ...  */ }
 ```
 
 > gugeng: The type of c is const char&. It might be legal only if the loop body doesn't change c.
+
+## Exercise 3.12
+
+Which, if any, of the following vector definitions are in error? For those that are legal, explain what the definition does. For those that are not legal, explain why they are illegal.
+
+(a) vector<vector<int>> ivec; // legal
+(b) vector<string> svec = ivec; // illegal, different type
+(c) vector<string> svec(10, "null"); // legal, 10 nulls
+
+## Exercise 3.13
+
+How many elements are there in each of the following vectors? What are the values of the elements?
+
+(a) vector<int> v1; // size: 0
+(b) vector<int> v2(10); // size: 10, value: 0
+(c) vector<int> v3(10, 42); // size: 10, value: 42
+(d) vector<int> v4{10}; // size: 1, value: 10
+(e) vector<int> v5{10, 42}; // size: 2, value: 10, 42
+(f) vector<string> v6{10}; // size: 10, value: ""
+(g) vector<string> v7{10, "hi"}; // size: 10, value: "hi"
+
+## Exercise 3.14
+
+Write a program to read a sequence of ints from cin and store those values in a vector.
+
