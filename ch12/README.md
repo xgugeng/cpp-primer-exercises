@@ -123,3 +123,12 @@ delete p;
 ```
 
 > gugeng: Double free
+
+## Exercise 12.14
+
+Write your own version of a function that uses a shared_ptr to manage a connection.
+
+## Exercise 12.15
+
+Rewrite the first exercise to use a lambda (§ 10.3.2, p. 388) in place of the end_connection function.
+

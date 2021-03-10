@@ -88,3 +88,34 @@ How many elements are there in each of the following vectors? What are the value
 
 Write a program to read a sequence of ints from cin and store those values in a vector.
 
+## Exercise 3.15
+
+Repeat the previous program but read strings this time.
+
+## Exercise 3.16
+
+Write a program to print the size and contents of the vectors from exercise 3.13. Check whether your answers to that exercise were correct. If not, restudy § 3.3.1 (p. 97) until you understand why you were wrong.
+
+## Exercise 3.17
+
+Read a sequence of words from cin and store the values a vector. After you’ve read all the words, process the vector and change each word to uppercase. Print the transformed elements, eight words to a line.
+
+## Exercise 3.18
+
+Is the following program legal? If not, how might you fix it?
+
+```cpp
+vector<int> ivec;
+ivec[0] = 42;
+```
+
+> gugeng: Segmentation fault, since the size of `ivec` is 0.
+
+## Exercise 3.19
+
+List three ways to define a vector and give it ten elements, each with the value 42. Indicate whether there is a preferred way to do so and why.
+
+## Exercise 3.20
+
+Read a set of integers into a vector. Print the sum of each pair of adjacent elements. Change your program so that it prints the sum of the first and last elements, followed by the sum of the second and second-to-last, and so on.
+
