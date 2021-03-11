@@ -119,3 +119,30 @@ List three ways to define a vector and give it ten elements, each with the value
 
 Read a set of integers into a vector. Print the sum of each pair of adjacent elements. Change your program so that it prints the sum of the first and last elements, followed by the sum of the second and second-to-last, and so on.
 
+## Exercise 3.21
+
+Redo the first exercise from § 3.3.3 (p. 105) using iterators.
+
+## Exercise 3.22
+
+Revise the loop that printed the first paragraph in text to instead change the elements in text that correspond to the first paragraph to all uppercase. After you’ve updated text, print its contents.
+
+## Exercise 3.23
+
+Write a program to create a vector with ten int elements. Using an iterator, assign each element a value that is twice its current value. Test your program by printing the vector.
+
+## Exercise 3.24
+
+Redo the last exercise from § 3.3.3 (p. 105) using iterators.
+
+## Exercise 3.25
+
+Rewrite the grade clustering program from § 3.3.3 (p. 104) using iterators instead of subscripts.
+
+## Exercise 3.26
+
+In the binary search program on page 112, why did we write `mid= beg + (end - beg) / 2;` instead of `mid= (beg + end) /2;`?
+
+> gugeng: NO operator `+` for two iterators.
+
+
