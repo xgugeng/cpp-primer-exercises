@@ -145,4 +145,111 @@ In the binary search program on page 112, why did we write `mid= beg + (end - be
 
 > gugeng: NO operator `+` for two iterators.
 
+## Exercise 3.27
+
+Assuming `txt_size` is a function that takes no arguments and returns an int value, which of the following definitions are illegal? Explain why.
+
+```cpp
+unsigned buf_size = 1024;
+```
+
+(a) int ia[buf_size]; // illegal, not constant dimension
+(b) int ia[4 * 7 - 14]; // legal
+(c) int ia[txt_size()]; // illegal
+(d) char st[11] = "fundamental"; // illegal, the size should be 12
+
+## Exercise 3.28
+
+What are the values in the following arrays?
+
+```cpp
+string sa[10]; // 10 empty strings
+int ia[10]; // 10 zeros
+int main() {
+    string sa2[10]; // 10 empty strings
+    int    ia2[10]; // undefined
+}
+```
+
+## Exercise 3.29
+
+List some of the drawbacks of using an array instead of a vector.
+
+> gugeng: fixed size at compile time, lack of APIs like vector.
+
+## Exercise 3.30
+
+Identify the indexing errors in the following code:
+
+```cpp
+constexpr size_t array_size = 10;
+int ia[array_size];
+for (size_t ix = 1; ix <= array_size; ++ix)
+      ia[ix] = ix;
+```
+
+> gugeng: if `ix` is equal to `array_size`, out of range.
+
+## Exercise 3.31
+
+Write a program to define an array of ten ints. Give each element the same value as its position in the array.
+
+## Exercise 3.32
+
+Copy the array you defined in the previous exercise into another array. Rewrite your program to use vectors.
+
+## Exercise 3.33
+
+What would happen if we did not initialize the scores array in the program on page 116?
+
+> gugeng: All elements would be undefined
+
+## Exercise 3.34
+
+Given that p1 and p2 point to elements in the same array, what does the following code do? Are there values of p1 or p2 that make this code illegal?
+
+```cpp
+p1 += p2 - p1;
+```
+
+> gugeng: The above code would make `p1` points the address that `p2` already points to. If `p1` and `p2` are legal, the code is always legal
+
+## Exercise 3.35
+
+Using pointers, write a program to set the elements in an array to zero.
+
+## Exercise 3.36
+
+Write a program to compare two arrays for equality. Write a similar program to compare two vectors.
+
+## Exercise 3.37
+
+What does the following program do?
+
+```cpp
+const char ca[] = {'h', 'e', 'l', 'l', 'o'};
+const char *cp = ca;
+while (*cp) {
+    cout << *cp << endl;
+    ++cp;
+}
+```
+
+> gugeng: The above program print each char in the array one by one.
+
+## Exercise 3.38: In this section, we noted that it was not only illegal but meaningless to try to add two pointers. Why would adding two pointers be meaningless?
+
+> [Addition of two pointers in c or c++ not supported. why? - Stack Overflow](https://stackoverflow.com/questions/25667580/addition-of-two-pointers-in-c-or-c-not-supported-why/25667730)
+
+## Exercise 3.39
+
+Write a program to compare two strings. Now write a program to compare the values of two C-style character strings.
+
+## Exercise 3.40
+
+Write a program to define two character arrays initialized from string literals. Now define a third character array to hold the concatenation of the two arrays. Use strcpy and strcat to copy the two arrays into the third.
+
+## Exercise 3.41
+
+Write a program to initialize a vector from an array of ints.
 
