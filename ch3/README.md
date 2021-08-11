@@ -2,7 +2,7 @@
 
 ## Exercise 3.1
 
-Rewrite the exercises from § 1.4.1 (p. 13) and § 2.6.2 (p. 76) with appropriate using declarations.
+Rewrite the exercises from § 1.4.1 and § 2.6.2 with appropriate using declarations.
 
 ## Exercise 3.2
 
@@ -253,3 +253,19 @@ Write a program to define two character arrays initialized from string literals.
 
 Write a program to initialize a vector from an array of ints.
 
+
+## Exercise 3.42
+
+Write a program to copy a vector of ints into an array of ints.
+
+## Exercise 3.43
+
+Write three different versions of a program to print the elements of ia. One version should use a range for to manage the iteration, the other two should use an ordinary for loop in one case using subscripts and in the other using pointers. In all three programs write all the types directly. That is, do not use a type alias, auto, or decltype to simplify the code.
+
+## Exercise 3.44
+
+Rewrite the programs from the previous exercises using a type alias for the type of the loop control variables.
+
+## Exercise 3.45
+
+Rewrite the programs again, this time using auto.
