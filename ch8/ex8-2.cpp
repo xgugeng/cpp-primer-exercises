@@ -14,3 +14,9 @@ istream& getStream(istream& is)
     is.clear();
     return is;
 }
+
+int main()
+{
+    auto& is = getStream(std::cin);
+    std::cout << is.rdstate() << std::endl;
+}

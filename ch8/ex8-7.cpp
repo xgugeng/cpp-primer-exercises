@@ -1,9 +1,8 @@
 #include <iostream>
+#include <sstream>
 #include <string>
 
-using std::istream;
-
-istream& getStream(istream& is)
+std::istream& getStream(std::istream& is)
 {
     std::string str;
     while (is >> str)
@@ -13,4 +12,10 @@ istream& getStream(istream& is)
 
     is.clear();
     return is;
+}
+
+int main()
+{
+    std::istringstream ss("Hello World!");
+    getStream(ss);
 }
