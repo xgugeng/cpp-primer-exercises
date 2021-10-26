@@ -12,7 +12,7 @@ Write a program to read the standard input a line at a time. Modify your program
 
 Explain how whitespace characters are handled in the string input operator and in the getline function.
 
-> gugeng: `is >> s` separates the input by whitespace before reading into `s`. `getline` ignores the whitespaces before hitting a newline.
+`is >> s` separates the input by whitespace before reading into `s`. `getline` ignores the whitespaces before hitting a newline.
 
 ## Exercise 3.4
 
@@ -30,13 +30,13 @@ Use a range for to change all the characters in a string to X.
 
 What would happen if you define the loop control variable in the previous exercise as type char? Predict the results and then change your program to use a char to see if you were right.
 
-> gugeng: The string won't change since the loop control variable is a copy of each char in the string.
+The string won't change since the loop control variable is a copy of each char in the string.
 
 ## Exercise 3.8
 
 Rewrite the program in the first exercise, first using a while and again using a traditional for loop. Which of the three approaches do you prefer and why?
 
-> gugeng: For this scenario, I prefer the range for, since the index is not needed
+For this scenario, I prefer the range for, since the index is not needed
 
 ## Exercise 3.9
 
@@ -47,7 +47,7 @@ string s;
 cout << s[0] << endl;
 ```
 
-> gugeng: The code tries to print the first char of string s. It's invalid since string is empty;
+The code tries to print the first char of string s. It's invalid since string is empty;
 
 ## Exercise 3.10
 
@@ -62,7 +62,7 @@ const string s = "Keep out!";
 for (auto &c : s) { /* ...  */ }
 ```
 
-> gugeng: The type of c is const char&. It might be legal only if the loop body doesn't change c.
+The type of c is const char&. It might be legal only if the loop body doesn't change c.
 
 ## Exercise 3.12
 
@@ -109,7 +109,7 @@ vector<int> ivec;
 ivec[0] = 42;
 ```
 
-> gugeng: Segmentation fault, since the size of `ivec` is 0.
+Segmentation fault, since the size of `ivec` is 0.
 
 ## Exercise 3.19
 
@@ -143,7 +143,7 @@ Rewrite the grade clustering program from § 3.3.3 (p. 104) using iterators inst
 
 In the binary search program on page 112, why did we write `mid= beg + (end - beg) / 2;` instead of `mid= (beg + end) /2;`?
 
-> gugeng: NO operator `+` for two iterators.
+NO operator `+` for two iterators.
 
 ## Exercise 3.27
 
@@ -175,7 +175,7 @@ int main() {
 
 List some of the drawbacks of using an array instead of a vector.
 
-> gugeng: fixed size at compile time, lack of APIs like vector.
+fixed size at compile time, lack of APIs like vector.
 
 ## Exercise 3.30
 
@@ -188,7 +188,7 @@ for (size_t ix = 1; ix <= array_size; ++ix)
       ia[ix] = ix;
 ```
 
-> gugeng: if `ix` is equal to `array_size`, out of range.
+if `ix` is equal to `array_size`, out of range.
 
 ## Exercise 3.31
 
@@ -202,7 +202,7 @@ Copy the array you defined in the previous exercise into another array. Rewrite 
 
 What would happen if we did not initialize the scores array in the program on page 116?
 
-> gugeng: All elements would be undefined
+All elements would be undefined
 
 ## Exercise 3.34
 
@@ -212,7 +212,7 @@ Given that p1 and p2 point to elements in the same array, what does the followin
 p1 += p2 - p1;
 ```
 
-> gugeng: The above code would make `p1` points the address that `p2` already points to. If `p1` and `p2` are legal, the code is always legal
+The above code would make `p1` points the address that `p2` already points to. If `p1` and `p2` are legal, the code is always legal
 
 ## Exercise 3.35
 
@@ -235,7 +235,7 @@ while (*cp) {
 }
 ```
 
-> gugeng: The above program print each char in the array one by one.
+The above program print each char in the array one by one.
 
 ## Exercise 3.38: In this section, we noted that it was not only illegal but meaningless to try to add two pointers. Why would adding two pointers be meaningless?
 

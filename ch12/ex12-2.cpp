@@ -7,6 +7,6 @@ int main()
     std::cout << csb.size() << " " << csb.front() << " " << csb.back() << std::endl;
 
     StrBlob sb = csb;
-    sb.push_back("gugeng");
+    sb.push_back("xgugeng");
     std::cout << sb.size() << " " << sb.front() << " " << sb.back() << std::endl;
 }
